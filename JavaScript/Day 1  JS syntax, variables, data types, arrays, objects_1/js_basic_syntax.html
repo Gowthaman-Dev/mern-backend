@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_practice</title>
+</head>
+<body>
+
+<script>
+
+// statement and looping example using comparison and boolean
+
+let roleName = "tester";
+
+if (roleName === "designer" || roleName === "tester") {
+    console.log("Yes! I am a Tester");
+} else {
+    console.log("I am not a Tester");
+}
+
+let score = 42;
+
+if (score === 42 && score < 50) {
+    console.log("Result: Pass");
+} else {
+    console.log("Result: Fail");
+}
+
+for (let count = 20; count <= 28; count++) {
+
+    if (count % 2 === 0) {
+        console.log("Even number:", count);
+    } else {
+        console.log("Odd number:", count);
+    }
+}
+
+let voterAge = 21;
+
+if (voterAge >= 18) {
+    console.log("Eligible to vote");
+} else {
+    console.log("Not eligible to vote");
+}
+
+let gradeMark = 68;
+
+if (gradeMark >= 85) {
+    console.log("Grade A");
+} else if (gradeMark >= 50 && gradeMark < 85) {
+    console.log("Grade B");
+} else {
+    console.log("Fail");
+}
+
+// boolean example
+
+let isActive = 30 > 15;
+console.log(isActive);
+
+var statusValue;
+var statusValue = true;
+
+let flag = true;
+flag = false;
+
+console.log(statusValue);
+console.log(flag);
+
+let checkValue = 9;
+
+if (checkValue > 5 && checkValue != 3) {
+    console.log("Condition is true", checkValue);
+} else {
+    console.log("Condition is false");
+}
+
+let numberCheck = 12;
+
+if (numberCheck > 8 || numberCheck != 10) {
+    console.log("True condition", numberCheck);
+} else {
+    console.log("False condition");
+}
+
+while (numberCheck < 18) {
+    numberCheck++;
+    console.log(numberCheck);
+}
+
+let fullName = "Ravi" + "Teja";
+console.log(fullName);
+
+// assignment operator example
+
+let message = "Hello ";
+let userName = "World";
+message += userName;
+console.log(message);
+
+let output = "Sum:";
+output += 200;
+console.log(output);
+
+// arithmetic operator example
+
+let multiplyValue = "120" * "3";
+console.log(multiplyValue);
+
+let numOne = 30;
+let numTwo = 25;
+let addition = numOne + numTwo;
+console.log(addition);
+
+let product = numOne * numTwo;
+console.log(product);
+
+let firstWord = "Iron";
+let secondWord = "Man";
+let combinedWord = firstWord + secondWord;
+console.log(combinedWord);
+
+// undefined example
+
+let tempValue;
+console.log(tempValue);
+
+// NaN example
+
+let hero = "robert";
+let actor = "downey";
+let invalidResult = hero * actor;
+console.log(invalidResult);
+
+let invalidMod = 15 % "value";
+console.log(invalidMod);
+
+// hoisting example
+
+console.log(totalCount);
+var totalCount = 99;
+
+greet();
+function greet() {
+    console.log("Welcome User");
+}
+
+showMessage();
+let showMessage = function () {
+    console.log("This is a function expression");
+};
+
+</script>
+
+</body>
+</html>
