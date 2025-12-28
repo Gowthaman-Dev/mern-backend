@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //Convert this function into an arrow function in three different valid ways (different arrow syntaxes):
+        // // js
+        // function greet(name) {
+        //   return "Hello, " + name; 
+        // }
+
+
+        // 1. Arrow function with block body and return
+
+        const arrowfun = (name) => {
+            return ("Hello" + name);
+
+        }
+        console.log(arrowfun(' Rocky Gowtham'));
+
+
+        // Arrow function with implicit return
+        const greets = (name) => "Hello, " + name;
+
+        // Function call
+        console.log(greets("Rocky Gowtham"));
+
+
+        // Arrow function with single parameter
+        const greetss = name => "Hello, " + name;
+
+        // Function call
+        console.log(greetss("Rocky Gowtham"));
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // Write a function calculateBill that takes two parameters: amount and taxPercentage and returns the final bill amount.
+        // Then write the same logic using an arrow function.
+
+        function calculateBill(amount, taxPercentage) {
+            return amount + (amount * taxPercentage / 100);
+        }
+        // Function call
+        console.log(calculateBill(1000, 18));
+
+        // amount → Original price
+        // amount * taxPercentage / 100 → Tax amount
+        // Final bill = Original price + Tax
+        // 👉 That’s why we add (+).
+
+
+        // 2. Arrow Function 
+        const calculateBill = (amount, taxPercentage) => {
+            return amount + (amount * taxPercentage / 100);
+        };
+        // Function call
+        console.log(calculateBill(1000, 18));
+
+
+        // 3. Arrow Function with Implicit Return
+        const calculateBill = (amount, taxPercentage) =>
+            amount + (amount * taxPercentage / 100);
+
+        console.log(calculateBill(1000, 18));
+
+
+
+
+
+
+
+
+
+        
+
+
+
+    </script>
+</body>
+
+</html>
