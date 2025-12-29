@@ -1,0 +1,66 @@
+<script>
+
+    //     Observe the code and write:
+
+    // What will be logged for each console.log?
+
+    // Why is there any error (if you think so)?
+
+
+    // js
+    // console.log(add(2, 3));
+    // console.log(sub(5, 2));
+
+    // function add(a, b) {
+    //   return a + b;
+    // }
+
+    // const sub = (a, b) => {
+    //   return a - b;
+    // };
+
+    // Create a function createGreeting that:
+
+
+
+    console.log(add(2, 3));
+    console.log(sub(5, 2));
+
+    function add(a, b) {
+        return a + b;
+    }
+
+    const sub = (a, b) => {
+        return a - b;
+    };
+
+    //     Why is there an error?
+
+    // Explanation (Interview Style)
+    // add is a function declaration
+    // Function declarations are hoisted
+    // So add(2, 3) works even before the function is defined
+    // ✔️ console.log(add(2, 3)) → 5
+
+
+    // sub is an arrow function stored in a const variable
+    // Variables declared with const are not usable before initialization
+    // Arrow functions are not hoisted
+
+    // ❌ console.log(sub(5, 2)) throws:
+    // ReferenceError: Cannot access 'sub' before initialization
+
+
+    // | Function Declaration            | Arrow Function             |
+    // | ------------------------------- | -------------------------- |
+    // | Hoisted                         | Not hoisted                |
+    // | Can be called before definition | Must be defined before use |
+    // | Uses `function` keyword         | Uses `=>`                  |
+
+
+
+    // One-Line Interview Answer;
+    // Function declarations are hoisted, but arrow functions assigned to variables are not, which causes the error.
+
+
+</script>

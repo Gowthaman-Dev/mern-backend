@@ -1,0 +1,40 @@
+<script>
+
+  const getttinf = (getttinf) => {
+    return (name) => {
+      return `${getttinf} ${name}`.toUpperCase()
+    }
+  }
+
+  const gom = getttinf('podu')
+  console.log(gom('Gommala'));
+
+
+
+  //Frequency of Characters in a String
+
+  const getCharFrequency = (str) => {
+    let result = {};
+
+    for (let i = 0; i < str.length; i++) {
+      let char = str[i];
+      
+
+      if (result[char]) {
+        result[char]++;
+      } else {
+        result[char] = 1;
+      }
+    }
+
+    return result;
+  };
+
+  // Example usage
+  console.log(getCharFrequency("banana"));
+  // { b: 1, a: 3, n: 2 }
+
+
+
+
+</script>

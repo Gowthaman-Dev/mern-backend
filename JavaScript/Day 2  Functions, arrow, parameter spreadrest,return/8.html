@@ -1,0 +1,46 @@
+<script>
+    //     8.Rewrite this arrow function as a normal function declaration and as a function expression:
+
+
+    // js
+    // const formatName = (firstName, lastName) =>
+    //   firstName.toUpperCase() + " " + lastName.toUpperCase();
+
+    //1.Normal Function Declaration
+    function formatName(firstName, lastName) {
+        return firstName.toUpperCase() + " " + lastName.toUpperCase();
+    }
+    console.log(formatName('Gowtham', 'monisha'));
+
+
+    //2.Function Expression
+    const formatNamess = function (firstName, lastName) {
+        return firstName.toUpperCase() + " " + lastName.toUpperCase()
+    }
+    console.log(formatNamess('Jerlin', 'Monisha'));
+
+    
+    //3.Arrow Function
+    const formatnames = (firstName, lastName) => {
+        return firstName.toUpperCase() + " " + lastName.toUpperCase()
+    }
+    console.log(formatnames('rocky', 'gowtham'));
+
+
+    //     Key Differences (Interview Points)
+
+    // Function Declaration;
+    // Hoisted (can be used before definition)
+    // Uses function keyword
+    
+    // Function Expression;
+    // Stored in a variable
+    // Not hoisted like declarations
+
+    // Arrow Function;
+    // Short syntax
+    // Implicit return
+    // No own this or arguments
+
+
+</script>

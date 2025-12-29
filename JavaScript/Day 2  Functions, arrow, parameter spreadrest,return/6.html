@@ -1,0 +1,43 @@
+<script>
+    //     Write a function sumAll that accepts any number of arguments and returns their sum.
+    // Then rewrite sumAll as an arrow function using rest parameter.
+
+
+    function sumAll(){
+        let sum = 0
+
+        for(let i = 0 ; i<arguments.length;i++){
+            
+            sum +=arguments[i]
+            
+        }
+        return sum
+    }
+    console.log(sumAll(5,5,5,5));
+ 
+    
+
+
+
+
+
+
+
+
+
+
+    
+    const summ = (...number)=>{
+        let add = 0
+
+        for(let a of number ){
+            add += a
+        }
+        return add
+    }
+
+    console.log(summ(3,3,3,3,3));
+    
+
+
+</script>

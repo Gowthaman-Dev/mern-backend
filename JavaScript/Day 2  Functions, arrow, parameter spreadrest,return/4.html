@@ -1,0 +1,70 @@
+<script>
+    //     4.You have this object:
+
+
+    // js
+    // const user = {
+    //   name: "Ajay",
+    //   sayName: function () {
+    //     console.log(this.name);
+    //   },
+    // };
+
+    // Add one more method sayNameArrow using an arrow function, then think and write what difference
+    //  you expect between sayName and sayNameArrow when you call them.
+
+
+
+    //Answer:
+
+    const user = {
+        name: "Ajay",
+
+        // Normal function
+        sayName: function () {
+            console.log(this.name);
+        },
+
+        // Arrow function
+        sayNameArrow: () => {
+            console.log(this.name);
+        },
+    };
+
+    user.sayName();       // ?
+    user.sayNameArrow();  // ?
+
+
+    //     user.sayName(); // Ajay
+    // Why?
+
+    // Normal functions have their own this
+
+    // When called as user.sayName(),
+    // 👉 this refers to the user object
+
+
+
+    //     user.sayNameArrow(); // undefined
+    // Why?
+
+    // Arrow functions do NOT have their own this
+
+    // They take this from the surrounding scope (lexical this)
+
+    // Here, the surrounding scope is global, not the user object
+
+    // ❌ So this.name → undefined
+
+
+    //     Normal function-க்கு own this இருக்கும்,
+    // Arrow function-க்கு own this கிடையாது — outer scope-ல இருந்து this எடுக்குது.
+
+
+    // Quick Rule to Remember 🧠
+
+    // ✅ Use normal function → when you need this to refer to the object
+
+    // ❌ Avoid arrow function → as object methods (when this is required)
+
+</script>

@@ -1,0 +1,30 @@
+<script>
+    //  Given the array:
+
+
+    // js
+    // const marks = [98, 45, 67, 30, 88, 76];
+
+    // Write a function (you choose the type) getPassedMarks that returns only marks greater than or 
+    // equal to 50, using filter and an arrow callback.
+
+
+    const marks = [98, 45, 67, 30, 88, 76];
+
+    function getPassedMarks(arr) {
+        return arr.filter(mark => mark >= 50);
+    }
+
+    console.log(getPassedMarks(marks));
+    // Output: [98, 67, 88, 76]
+
+    //     Key Interview Points 🧠
+
+    // filter() always returns a new array
+
+    // It does not modify the original array
+
+    // Arrow callback makes the code short and readable
+
+
+</script>
