@@ -1,0 +1,80 @@
+<script>
+    // -------------------------------
+// 1️⃣ Function that accepts a callback and prints "Task Completed" after callback runs
+function runTask(callback) {
+    callback();
+    console.log("Task Completed\n");
+}
+
+// Callback example: validate age eligibility
+function checkAge(age) {
+    if (age >= 18) {
+        console.log("Eligible to vote");
+    } else {
+        console.log("Not eligible to vote");
+    }
+}
+
+// Run age check task
+runTask(() => checkAge(20));
+
+// -------------------------------
+// 2️⃣ Simulate API call → success callback → final message
+function fakeApiCall(successCallback) {
+    console.log("Calling API...");
+    setTimeout(() => {
+        successCallback("API call successful!");
+        console.log("Task Completed\n");
+    }, 1000);
+}
+
+fakeApiCall((message) => console.log(message));
+
+// -------------------------------
+// 3️⃣ Array manipulations
+runTask(() => {
+    let arr = [];
+
+    // Add 3 elements
+    arr.push("A", "B", "C");
+    console.log("After adding 3 elements:", arr);
+
+    // Remove first element
+    arr.shift();
+    console.log("After removing first element:", arr);
+
+    // Replace last element without using direct index
+    arr[arr.length - 1] = "Z";
+    console.log("After replacing last element:", arr);
+
+    // Remove exactly 2 elements from middle
+    arr = ["X", "Y", "Z", "W"];
+    arr.splice(1, 2); // removes 2 elements starting at index 1
+    console.log("After removing 2 middle elements:", arr);
+});
+
+// -------------------------------
+// 4️⃣ Filter even numbers
+runTask(() => {
+    let numbers = [1, 2, 3, 4, 5, 6];
+    let evens = numbers.filter(num => num % 2 === 0);
+    console.log("Even numbers:", evens);
+});
+
+// -------------------------------
+// 5️⃣ Convert prices to GST-added prices
+runTask(() => {
+    let prices = [100, 200, 300];
+    let gstPrices = prices.map(price => price * 1.18); // 18% GST
+    console.log("Prices with GST:", gstPrices);
+});
+
+// -------------------------------
+// 6️⃣ Total salary using reduce
+runTask(() => {
+    let salaries = [5000, 6000, 7000];
+    let totalSalary = salaries.reduce((total, salary) => total + salary, 0);
+    console.log("Total Salary:", totalSalary);
+});
+
+</script>
