@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ES6 + JS Interview Master Tasks</title>
+</head>
+<body>
+
+<h1>🧪 ES6 CORE + INTERVIEW + DSA TASKS</h1>
+
+<script>
+/* =====================================================
+   🧪 TASK 1: let & const
+===================================================== */
+
+// ES5
+var nameES5 = "Rocky";
+var ageES5 = 23;
+
+// ES6
+const nameES6 = "Rocky";
+let ageES6 = 23;
+
+// Block scope
+if (true) {
+  let blockValue = 100;
+  console.log("Block value:", blockValue);
+}
+// console.log(blockValue); ❌ ReferenceError
+
+// const reassignment error
+const PI = 3.14;
+// PI = 3.15 ❌ TypeError
+
+// var bug
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => console.log("var bug:", i), 1000);
+}
+
+// fixed with let
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => console.log("let fixed:", i), 1000);
+}
+
+/* =====================================================
+   🧪 TASK 2: Arrow Functions
+===================================================== */
+
+// Normal function → Arrow
+function add(a, b) {
+  return a + b;
+}
+const addArrow = (a, b) => a + b;
+
+// One parameter
+const square = x => x * x;
+
+// Return object
+const getUser = () => ({ name: "Rocky", age: 23 });
+
+// map()
+const nums = [1, 2, 3];
+const doubled = nums.map(n => n * 2);
+
+/* =====================================================
+   🧪 TASK 3: Template Literals
+===================================================== */
+
+const user = "Rocky";
+const role = "Developer";
+console.log(`Name: ${user}, Role: ${role}`);
+
+const oldWay = "Hello " + user + ", you are a " + role;
+const newWay = `Hello ${user}, you are a ${role}`;
+
+const multiLine = `
+Line 1
+Line 2
+Line 3
+`;
+
+/* =====================================================
+   🧪 CLASS TASKS
+===================================================== */
+
+class Student {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+class BankAccount {
+  constructor(balance) {
+    this.balance = balance;
+  }
+  deposit(amount) {
+    this.balance += amount;
+  }
+  withdraw(amount) {
+    this.balance -= amount;
+  }
+}
+
+const s1 = new Student("A", 20);
+const s2 = new Student("B", 21);
+const s3 = new Student("C", 22);
+
+/* =====================================================
+   🧪 IMPORT / EXPORT (COMMENT ONLY – FILE BASED)
+===================================================== */
+/*
+export function add() {}
+export function sub() {}
+
+import { add, sub } from "./math.js";
+
+export default class User {}
+import User from "./User.js";
+*/
+
+/* =====================================================
+   🧪 DESTRUCTURING
+===================================================== */
+
+const arr = [10, 20];
+const [a, b] = arr;
+
+const obj = { x: 1, y: 2 };
+const { x: xValue, y: yValue } = obj;
+
+function show({ x, y }) {
+  console.log(x, y);
+}
+
+/* =====================================================
+   🧪 SPREAD OPERATOR
+===================================================== */
+
+const arr1 = [1, 2];
+const arr2 = [...arr1];
+
+const merged = [...arr1, ...arr2];
+
+const userObj = { name: "Rocky" };
+const updatedUser = { ...userObj, age: 23 };
+
+function sum(a, b, c) {
+  return a + b + c;
+}
+sum(...[1, 2, 3]);
+
+/* =====================================================
+   🧪 REST OPERATOR
+===================================================== */
+
+function total(...nums) {
+  return nums.reduce((a, b) => a + b, 0);
+}
+
+const [first, ...rest] = [1, 2, 3, 4];
+
+/* =====================================================
+   🧪 TERNARY OPERATOR
+===================================================== */
+
+const number = 5;
+const evenOdd = number % 2 === 0 ? "Even" : "Odd";
+
+const mark = 35;
+const result = mark >= 35 ? "Pass" : "Fail";
+
+/* =====================================================
+   🧪 OPTIONAL CHAINING
+===================================================== */
+
+const api = { user: { profile: { name: "Rocky" } } };
+console.log(api.user?.profile?.name);
+console.log(api.user?.address?.city);
+
+const arrCheck = [];
+console.log(arrCheck?.[0]);
+
+/* =====================================================
+   🧪 NULLISH COALESCING
+===================================================== */
+
+const value = 0;
+console.log(value || 10); // 10 ❌
+console.log(value ?? 10); // 0 ✅
+
+/* =====================================================
+   🧪 ES2024 – Promise.withResolvers()
+===================================================== */
+
+// Old way
+let resolveFn;
+const oldPromise = new Promise(resolve => {
+  resolveFn = resolve;
+});
+
+// ES2024
+const { promise, resolve, reject } = Promise.withResolvers();
+
+/* =====================================================
+   🧠 INTERVIEW + DSA
+===================================================== */
+
+// Closure
+function counter() {
+  let count = 0;
+  return () => ++count;
+}
+
+// Swap without temp
+let x1 = 5, y1 = 10;
+[x1, y1] = [y1, x1];
+
+// First non-repeating char
+function firstUnique(str) {
+  for (let c of str) {
+    if (str.indexOf(c) === str.lastIndexOf(c)) return c;
+  }
+}
+firstUnique("aabbcdde");
+
+// Move zeros
+function moveZeros(arr) {
+  return [...arr.filter(n => n !== 0), ...arr.filter(n => n === 0)];
+}
+
+// Rotation check
+function isRotation(a, b) {
+  return a.length === b.length && (a + a).includes(b);
+}
+
+// Longest consecutive
+function longestSeq(nums) {
+  const set = new Set(nums);
+  let max = 0;
+  for (let n of set) {
+    if (!set.has(n - 1)) {
+      let curr = n;
+      let len = 1;
+      while (set.has(curr + 1)) {
+        curr++;
+        len++;
+      }
+      max = Math.max(max, len);
+    }
+  }
+  return max;
+}
+
+// Balanced brackets
+function isBalanced(s) {
+  const stack = [];
+  const map = { ')': '(', ']': '[', '}': '{' };
+  for (let ch of s) {
+    if ("([{".includes(ch)) stack.push(ch);
+    else if (stack.pop() !== map[ch]) return false;
+  }
+  return stack.length === 0;
+}
+
+</script>
+
+</body>
+</html>

@@ -3,19 +3,24 @@
     // Then rewrite sumAll as an arrow function using rest parameter.
 
 
-    function sumAll(){
+    function sumAll() {
         let sum = 0
 
-        for(let i = 0 ; i<arguments.length;i++){
-            
-            sum +=arguments[i]
-            
+        for (let i = 0; i < arguments.length; i++) {
+
+            sum += arguments[i]
+
         }
         return sum
     }
-    console.log(sumAll(5,5,5,5));
- 
-    
+    console.log(sumAll(5, 5, 5, 5));
+
+
+    //     Easy Memory (Tamil)
+
+    // Normal function → arguments use பண்ணலாம்
+
+    // Arrow function → arguments ❌ → ...rest ✅
 
 
 
@@ -23,21 +28,17 @@
 
 
 
-
-
-
-    
-    const summ = (...number)=>{
+    const summ = (...number) => {
         let add = 0
 
-        for(let a of number ){
+        for (let a of number) { 
             add += a
         }
         return add
     }
 
-    console.log(summ(3,3,3,3,3));
-    
+    console.log(summ(3, 3, 3, 3, 3));
+
 
 
 </script>
