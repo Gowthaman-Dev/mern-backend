@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Callback, Promise, Async/Await – Full Assignment</title>
+</head>
+<body>
+  <h1>JS Callback, Promise & Async/Await Assignments</h1>
+  <p>Open Console (F12) to see output</p>
+
+  <script>
+    console.log("========= CALLBACK PROGRAMS =========");
+
+    // 1. setTimeout callback print message
+    setTimeout(() => {
+      console.log("1. Callback: Message printed after 1 second");
+    }, 1000);
+
+    // 2. Callback-based calculator
+    function calculator(a, b, operation) {
+      operation(a, b);
+    }
+
+    calculator(10, 5, (x, y) => {
+      console.log("2. Calculator Add:", x + y);
+    });
+
+    // 3. Nested callback example
+    function first(cb) {
+      setTimeout(() => {
+        console.log("3. First callback");
+        cb();
+      }, 500);
+    }
+
+    function second() {
+      console.log("   Second callback (nested)");
+    }
+
+    first(second);
+
+    // 4. Callback error handling
+    function divide(a, b, callback) {
+      if (b === 0) {
+        callback("Error: Division by zero", null);
+      } else {
+        callback(null, a / b);
+      }
+    }
+
+    divide(10, 2, (error, result) => {
+      if (error) {
+        console.error("4.", error);
+      } else {
+        console.log("4. Division Result:", result);
+      }
+    });
+
+    // 5. Simulate API using callback
+    function fakeAPI(callback) {
+      setTimeout(() => {
+        callback({ user: "Rocky", role: "Developer" });
+      }, 1000);
+    }
+
+    fakeAPI((data) => {
+      console.log("5. API Data:", data);
+    });
+
+    // ===================================================
+
+    console.log("========= PROMISE PROGRAMS =========");
+
+    // 6. Promise resolve after delay
+    const delayPromise = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve("6. Promise resolved after 1 second");
+      }, 1000);
+    });
+
+    delayPromise.then(console.log);
+
+    // 7. Promise reject example
+    const rejectPromise = new Promise((_, reject) => {
+      reject("7. Promise rejected!");
+    });
+
+    rejectPromise.catch(console.error);
+
+    // 8. Promise chaining
+    Promise.resolve(10)
+      .then((num) => num * 2)
+      .then((result) => console.log("8. Promise chaining result:", result));
+
+    // 9. Promise.all usage
+    const p1 = Promise.resolve("A");
+    const p2 = Promise.resolve("B");
+    const p3 = Promise.resolve("C");
+
+    Promise.all([p1, p2, p3]).then((values) => {
+      console.log("9. Promise.all result:", values);
+    });
+
+    // 10. Convert callback to promise
+    function callbackToPromise() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve("10. Converted callback to promise");
+        }, 1000);
+      });
+    }
+
+    callbackToPromise().then(console.log);
+
+    // ===================================================
+
+    console.log("========= ASYNC / AWAIT PROGRAMS =========");
+
+    // 11. Async function returning value
+    async function returnValue() {
+      return "11. Async function returned value";
+    }
+
+    returnValue().then(console.log);
+
+    // 12. try/catch error handling
+    async function errorHandling() {
+      try {
+        throw new Error("12. Something went wrong");
+      } catch (err) {
+        console.error(err.message);
+      }
+    }
+
+    errorHandling();
+
+    // 13. Sequential await calls
+    async function sequential() {
+      const a = await Promise.resolve("First");
+      const b = await Promise.resolve("Second");
+      console.log("13. Sequential:", a, b);
+    }
+
+    sequential();
+
+    // 14. Parallel await using Promise.all
+    async function parallel() {
+      const results = await Promise.all([
+        Promise.resolve(1),
+        Promise.resolve(2),
+        Promise.resolve(3)
+      ]);
+      console.log("14. Parallel:", results);
+    }
+
+    parallel();
+
+    // 15. Convert promise to async/await
+    function getData() {
+      return Promise.resolve("15. Promise converted to async/await");
+    }
+
+    async function asyncConvert() {
+      const data = await getData();
+      console.log(data);
+    }
+
+    asyncConvert();
+
+  </script>
+</body>
+</html>
