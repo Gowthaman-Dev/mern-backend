@@ -1,0 +1,398 @@
+/* =====================
+   GLOBAL STYLES
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f9fafb;
+  scroll-behavior: smooth;
+}
+
+/* =====================
+   HERO SECTION
+===================== */
+.container {
+  min-height: 100vh;
+  max-width: 720px;
+  margin: auto;
+  padding: 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(to bottom right, #f9fafb, #e0f2fe);
+  border-radius: 12px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 35px;
+}
+
+.js {
+  background: #ffe066;
+  color: #1f2937;
+  font-weight: 700;
+  padding: 10px 12px;
+  border-radius: 50%;
+}
+
+.container h1 {
+  font-size: 30px;
+  color: #111827;
+}
+
+h2 {
+  font-size: 34px;
+  margin-bottom: 22px;
+  line-height: 1.35;
+  color: #1f2937;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #f59e0b;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+.highlight {
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.container p {
+  color: #4b5563;
+  margin-bottom: 35px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+button {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 15px 32px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #2563eb;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+small {
+  margin-top: 30px;
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+/* =====================
+   YELLOW SECTION
+===================== */
+.js-section {
+  background: #facc15;
+  padding: 80px 60px;
+}
+
+.content {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.left h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.right p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.right .note {
+  font-size: 15px;
+  color: #374151;
+}
+
+/* =====================
+   WHAT YOU WILL LEARN
+===================== */
+.learn-section {
+  background: #ffffff;
+  padding: 100px 60px;
+}
+
+.learn-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 70px;
+}
+
+.learn-left {
+  flex: 1;
+}
+
+.learn-left h2 {
+  font-size: 36px;
+  margin-bottom: 25px;
+}
+
+.learn-left p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.learn-left .note {
+  color: #6b7280;
+}
+
+.learn-right {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 50px;
+}
+
+.learn-right ul {
+  list-style: none;
+}
+
+.learn-right li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.learn-right li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #f59e0b;
+  font-size: 20px;
+}
+
+.learn-right li:hover {
+  color: #3b82f6;
+  transform: translateX(5px);
+}
+
+/* =====================
+   TESTIMONIALS
+===================== */
+.testimonials {
+  background: #ffffff;
+  padding: 100px 60px;
+}
+
+.testimonials h2 {
+  text-align: center;
+  font-size: 36px;
+  line-height: 1.3;
+  color: #111827;
+  margin-bottom: 60px;
+}
+
+.cards {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  padding: 28px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  border: 1px solid #3b82f6;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.user h4 {
+  font-size: 16px;
+  color: #111827;
+  font-weight: 600;
+}
+
+.user span {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.twitter {
+  width: 22px;
+  height: 22px;
+}
+
+.card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #374151;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 900px) {
+  .content,
+  .learn-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .learn-right {
+    grid-template-columns: 1fr;
+  }
+
+  .left h1 {
+    font-size: 38px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials {
+    padding: 80px 30px;
+  }
+
+  .testimonials h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 30px 20px;
+  }
+
+  .learn-container {
+    gap: 30px;
+  }
+
+  h1, h2 {
+    font-size: 28px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+/* =====================
+   TOPIC BUTTONS SECTION
+===================== */
+section.topic-buttons {
+  padding: 60px 20px;
+  background: #f3f4f6;
+  text-align: center;
+}
+
+section.topic-buttons div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+section.topic-buttons button {
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background: #f59e0b;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+section.topic-buttons button:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+section.topic-buttons button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+section.topic-buttons button:focus {
+  outline: 2px solid #b45309;
+  outline-offset: 2px;
+}
+
+@media (max-width: 500px) {
+  section.topic-buttons button {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
