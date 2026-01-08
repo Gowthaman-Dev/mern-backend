@@ -1,0 +1,20 @@
+.profile-card {
+  width: 280px;
+  padding: 20px;
+  border: 10px solid #b69f9f;
+  border-radius: 12px;
+  text-align: center;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: scale(1.05);
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
